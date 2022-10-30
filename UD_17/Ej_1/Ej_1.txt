@@ -1,0 +1,9 @@
+use tienda_informatica;
+db.createCollection('Fabricantes');
+db.createCollection('Articulos');
+
+db.Fabricantes.insertMany([{codigo:1,nombre:'BMW'},{codigo:2,nombre:'Audi'},{codigo:3,nombre:'Seat'}]);
+
+db.Articulos.insertMany([{codigo:1,nombre:'Motor',precio:5022,fabricante:{codigo:1,nombre:'BMW'}},
+{codigo:2,nombre:'Rueda',precio:120,fabricante:{codigo:2,nombre:'Audi'}},
+{codigo:3,nombre:'Puerta',precio:80,fabricante:{codigo:3,nombre:'Seat'}}])

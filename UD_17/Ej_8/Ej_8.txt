@@ -1,0 +1,37 @@
+use investigadores;
+
+db.createCollection('Facultad');
+db.createCollection('Investigadores');
+db.createCollection('Equipos');
+db.createCollection('Reserva');
+
+db.Facultad.insertMany
+([{codigo:1,nombre:'Facultad de la Ciencia'},
+{codigo:2,nombre:'Facultad de la Informatica'},
+{codigo:3,nombre:'Facultad de la Salud'}]);
+
+db.Investigadores.insertMany
+([{dni:'45889567-A',nom_apels:'Isaac Ejarque',facultad:{codigo:1,nombre:'Facultad de la Ciencia'}},
+{dni:'15542447-B',nom_apels:'Jose Marin',facultad:{codigo:2,nombre:'Facultad de la Informatica'}},
+{dni:'99856623-C',nom_apels:'Arnau Marin',facultad:{codigo:3,nombre:'Facultad de la Salud'}}]);
+
+db.Equipos.insertMany
+([{numero_serie:123,nombre:'Equipo1',facultad:{codigo:1,nombre:'Facultad de la Ciencia'}},
+{numero_serie:456,nombre:'Equipo2',facultad:{codigo:2,nombre:'Facultad de la Informatica'}},
+{numero_serie:789,nombre:'Equipo3',facultad:{codigo:3,nombre:'Facultad de la Salud'}}]);
+
+db.Reserva.insertMany
+([{dni:{dni:'45889567-A',nom_apels:'Isaac Ejarque',facultad:{codigo:1,nombre:'Facultad de la Ciencia'}},
+numero_serie:{numero_serie:123,nom_apels:'Equipo1',facultad:{codigo:1,nombre:'Facultad de la Ciencia'}},
+comienzo:'2020-4-2',
+fin:'2022-12-12'},
+
+{dni:{dni:'15542447-B',nom_apels:'Jose Marin',facultad:{codigo:2,nombre:'Facultad de la Informatica'}},
+numero_serie:{numero_serie:456,nombre:'Equipo2',facultad:{codigo:2,nombre:'Facultad de la Informatica'}},
+comienzo:'2020-5-3',
+fin:'2022-12-13'},
+
+{dni:{dni:'99856623-C',nom_apels:'Arnau Marin',facultad:{codigo:3,nombre:'Facultad de la Salud'}},
+numero_serie:{numero_serie:789,nombre:'Equipo3',facultad:{codigo:3,nombre:'Facultad de la Salud'}},
+comienzo:'2022-6-4',
+fin:'2022-12-14'}]);

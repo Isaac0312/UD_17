@@ -1,0 +1,15 @@
+use almacenes;
+
+db.createCollection('Almacenes');
+db.createCollection('Cajas');
+
+db.Almacenes.insertMany
+([{codigo:1,lugar:'Barcelona',capacidad:120},
+{codigo:2,lugar:'Madrid',capacidad:532},
+{codigo:3,lugar:'Sevilla',capacidad:222}]);
+
+
+db.Cajas.insertMany
+([{num_referencia:1,contenido:'Ropa',valor:2324,almacen:{codigo:1,lugar:'Barcelona',capacidad:120}},
+{num_referencia:2,contenido:'Carne',valor:35553,almacen:{codigo:2,lugar:'Madrid',capacidad:532}},
+{num_referencia:3,contenido:'Pescado',valor:46456,almacen:{codigo:3,lugar:'Sevilla',capacidad:222}}]);

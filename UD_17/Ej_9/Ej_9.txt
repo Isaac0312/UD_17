@@ -1,0 +1,21 @@
+use cientificos;
+
+db.createCollection('Cientificos');
+db.createCollection('Proyecto');
+db.createCollection('Asignado_a');
+
+
+db.Cientificos.insertMany
+	([{dni:'48458589-A',nom_apels:'Isaac Ejarque'},
+	{dni:'13568976-A',nom_apels:'Jose Marin'},
+	{dni:'14859672-A',nom_apels:'Arnau Marin'}]);
+
+db.Proyecto.insertMany
+	([{codigo:1,nombre:'Space X',horas:5458646},
+	{codigo:2,nombre:'Tesla',horas:1345},
+	{codigo:3,nombre:'Rusia',horas:120}]);
+
+db.Asignado_a.insertMany
+	([{cientifico:{dni:'48458589-A',nom_apels:'Isaac Ejarque'},proyecto:{codigo:1,nombre:'Space X',horas:5458646}},
+	{cientifico:{dni:'13568976-A',nom_apels:'Jose Marin'},proyecto:{codigo:2,nombre:'Tesla',horas:1345}},
+ 	{cientifico:{dni:'14859672-A',nom_apels:'Arnau Marin'},proyecto:{codigo:3,nombre:'Rusia',horas:120}}]);

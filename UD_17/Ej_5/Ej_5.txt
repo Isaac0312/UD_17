@@ -1,0 +1,12 @@
+use directores;
+
+db.createCollection('Despachos');
+db.createCollection('Directores');
+
+db.Despachos.insertMany([{numero:1,capacidad:4},
+{numero:2,capacidad:14},
+{numero:3,capacidad:167}]);
+
+db.Directores.insertMany([{dni:'58648572-A',nom_apels:'Isaac Ejarque',dni_jefe:'58648572-A',despacho:{numero:1,capacidad:4}},
+{dni:'15689532-B',nom_apels:'Jose Marin',dni_jefe:'58648572-A',despacho:{numero:2,capacidad:14}},
+{dni:'49632517-C',nom_apels:'Arnau Marin',dni_jefe:'58648572-A',despacho:{numero:3,capacidad:167}}]);
